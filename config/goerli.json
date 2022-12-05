@@ -1,0 +1,8 @@
+{
+  "network": "goerli",
+  "contracts": {
+    "knwin": {
+      "startBlock": 8078167
+    }
+  }
+}

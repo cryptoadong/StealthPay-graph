@@ -1,0 +1,30 @@
+specVersion: 0.0.3
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: knwin
+    network: {{ network }}
+    source:
+      address: "0xB3c8CF53FE45d8fde16Bca13D9BD60E50Dae36F3"
+      abi: knwin
+      startBlock: {{contracts.knwin.startBlock}}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - Announcement
+        - OwnershipTransferred
+        - TokenWithdrawal
+      abis:
+        - name: knwin
+          file: ./abis/knwin.json
+      eventHandlers:
+        - event: Announcement(indexed address,uint256,indexed address,bytes32,bytes32)
+          handler: handleAnnouncement
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: TokenWithdrawal(indexed address,indexed address,uint256,indexed address)
+          handler: handleTokenWithdrawal
+      file: ./src/mapping.ts
