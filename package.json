@@ -1,18 +1,17 @@
 {
-  "name": "knwin-subgraph",
+  "name": "spayment-subgraph",
   "license": "MIT",
   "scripts": {
-    
-    "build": "graph codegen && graph build",
-    "authenticate":"graph auth --product hosted-service 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",
+    "build": "graph build",
+    "codegen": "graph codegen",
+    "authenticate": "graph auth --product hosted-service b5acdc410cc275bb2a0f916b75e7e900",
     "deploy:all": "yarn deploy:rinkeby && yarn deploy:polygon && yarn deploy:mainnet && yarn deploy:arbitrumOne && yarn deploy:optimism",
-    "deploy:arbitrumOne": "yarn build && yarn codegen && yarn prepare:arbitrumOne && graph deploy --node https://api.thegraph.com/deploy/ ScopeLift/UmbraArbitrumOne",
-    "deploy:goerli": "graph deploy --product hosted-service knwins/goerli",
-    "deploy:local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 ScopeLift/umbra",
-    "deploy:mainnet": "yarn build && yarn codegen && yarn prepare:mainnet && graph deploy --node https://api.thegraph.com/deploy/ ScopeLift/UmbraMainnet",
-    "deploy:optimism": "yarn build && yarn codegen && yarn prepare:optimism && graph deploy --node https://api.thegraph.com/deploy/ ScopeLift/UmbraOptimism",
-    "deploy:polygon": "yarn build && yarn codegen && yarn prepare:polygon && graph deploy --node https://api.thegraph.com/deploy/ ScopeLift/UmbraPolygon",
-    "deploy:rinkeby": "yarn build && yarn codegen && yarn prepare:rinkeby && graph deploy --node https://api.thegraph.com/deploy/ ScopeLift/UmbraRinkeby",
+    "deploy:arbitrumOne": "yarn build && yarn codegen && yarn prepare:arbitrumOne && graph deploy --product hosted-service cryptoadong/spaymentArbitrumOne",
+    "deploy:goerli": "yarn build && yarn codegen && yarn prepare:goerli && graph deploy --product hosted-service cryptoadong/spaymentgoerli",
+    "deploy:mainnet": "yarn build && yarn codegen && yarn prepare:mainnet && graph deploy --product hosted-service cryptoadong/spaymentMainnet",
+    "deploy:optimism": "yarn build && yarn codegen && yarn prepare:optimism && graph deploy --product hosted-service cryptoadong/spaymentOptimism",
+    "deploy:polygon": "yarn build && yarn codegen && yarn prepare:polygon && graph deploy --product hosted-service cryptoadong/spaymentPolygon",
+    "deploy:rinkeby": "yarn build && yarn codegen && yarn prepare:rinkeby && graph deploy --product hosted-service cryptoadong/spaymentRinkeby",
     "prepare:arbitrumOne": "mustache config/arbitrum.json subgraph.template.yaml > subgraph.yaml",
     "prepare:goerli": "mustache config/goerli.json subgraph.template.yaml > subgraph.yaml",
     "prepare:mainnet": "mustache config/mainnet.json subgraph.template.yaml > subgraph.yaml",
@@ -20,7 +19,7 @@
     "prepare:polygon": "mustache config/polygon.json subgraph.template.yaml > subgraph.yaml",
     "prepare:rinkeby": "mustache config/rinkeby.json subgraph.template.yaml > subgraph.yaml",
     "prettier": "prettier --write .",
-    "remove-local": "graph remove --node http://localhost:8020/ ScopeLift/umbra"
+    "remove-goerli": "graph remove --product hosted-service cryptoadong/spaymentgoreli"
   },
   "dependencies": {
     "@graphprotocol/graph-cli": "0.23.2",

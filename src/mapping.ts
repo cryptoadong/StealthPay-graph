@@ -1,4 +1,4 @@
-import { Announcement, OwnershipTransferred, TokenWithdrawal } from '../generated/knwin/knwin';
+import { Announcement, OwnershipTransferred, TokenWithdrawal } from '../generated/SPayment/SPayment';
 import { AnnouncementEntity } from '../generated/schema';
 
 export function handleAnnouncement(event: Announcement): void {

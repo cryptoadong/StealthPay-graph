@@ -1,8 +1,8 @@
 {
   "network": "goerli",
   "contracts": {
-    "knwin": {
-      "startBlock": 8078167
+    "SPayment": {
+      "startBlock": 8102814
     }
   }
 }
