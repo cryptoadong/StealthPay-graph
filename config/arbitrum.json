@@ -1,8 +1,8 @@
 {
   "network": "arbitrum-one",
   "contracts": {
-    "umbra": {
-      "startBlock": 7285883
+    "StealthPay": {
+      "startBlock": 45780305
     }
   }
 }

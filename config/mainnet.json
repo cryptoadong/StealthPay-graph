@@ -1,8 +1,8 @@
 {
   "network": "mainnet",
   "contracts": {
-    "umbra": {
-      "startBlock": 12343914
+    "StealthPay": {
+      "startBlock": 16159457
     }
   }
 }

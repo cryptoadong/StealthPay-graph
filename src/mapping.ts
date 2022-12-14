@@ -1,4 +1,4 @@
-import { Announcement, OwnershipTransferred, TokenWithdrawal } from '../generated/SPayment/SPayment';
+import { Announcement, OwnershipTransferred, TokenWithdrawal } from '../generated/StealthPay/StealthPay';
 import { AnnouncementEntity } from '../generated/schema';
 
 export function handleAnnouncement(event: Announcement): void {

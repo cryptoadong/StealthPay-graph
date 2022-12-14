@@ -1,8 +1,8 @@
 {
   "network": "goerli",
   "contracts": {
-    "SPayment": {
-      "startBlock": 8102814
+    "StealthPay": {
+      "startBlock": 8113414
     }
   }
 }

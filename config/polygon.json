@@ -1,8 +1,8 @@
 {
   "network": "matic",
   "contracts": {
-    "umbra": {
-      "startBlock": 20750142
+    "StealthPay": {
+      "startBlock": 36778921
     }
   }
 }
